@@ -15,14 +15,29 @@ body {
   border-radius: 10px;
   max-width: 1400px;
 
-  @media(max-width:645px){
+  @media (max-width: 645px) {
     width: calc(100vw - 30px);
     margin-top: 15px;
   }
 }
 
 .content {
-  padding: 40px 0;
+  padding: 40px 10px;
+
+  &__error-info {
+    margin: 100px auto;
+    max-width: 580px;
+    text-align: center;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
 
   &__title {
     font-weight: 800;
@@ -32,20 +47,20 @@ body {
   }
 
   &__items {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-      grid-column-gap: 11px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 11px;
 
-      @media(max-width:1400px){
-        grid-template-columns: repeat(3, 1fr);
-      }
-      @media(max-width:1060px){
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @media(max-width:740px){
-        grid-template-columns: repeat(1, 1fr);
-      }
+    @media (max-width: 1400px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 1060px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 740px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__top {
@@ -53,14 +68,14 @@ body {
     align-items: center;
     justify-content: space-between;
 
-  @media(max-width:1260px){
-    flex-direction: column;
-    
-    .categories{
-      margin-bottom: 30px;
+    @media (max-width: 1260px) {
+      flex-direction: column;
+
+      .categories {
+        margin-bottom: 30px;
+      }
     }
   }
-}
 }
 
 .container {
@@ -132,8 +147,8 @@ body {
     }
   }
 
-  .content__items{
-    display:block;
+  .content__items {
+    display: block;
   }
 
   &__item {
@@ -143,15 +158,31 @@ body {
     padding-top: 30px;
     margin-top: 30px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      position: relative;
+    }
+
     &-img {
       display: flex;
       align-items: center;
-      margin-right: 15px;
+      margin-right: 30px;
       width: 10%;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+        order: 1;
+      }
 
       img {
         width: 80px;
         height: 80px;
+
+        @media (max-width: 768px) {
+          width: 60%;
+          height: 60%;
+        }
       }
     }
 
@@ -172,6 +203,23 @@ body {
         font-size: 18px;
         color: #8d8d8d;
       }
+      @media (max-width: 768px) {
+        width: 100%;
+        order: 2;
+        h3 {
+          font-size: 32px;
+          margin-bottom: 8px;
+          margin-top: 15px;
+        }
+        p {
+          font-size: 22px;
+        }
+      }
+      @media (max-width: 500px) {
+        h3 {
+          font-size: 24px;
+        }
+      }
     }
 
     &-count {
@@ -180,16 +228,36 @@ body {
       justify-content: space-between;
       width: 13%;
 
+      b {
+        font-size: 22px;
+      }
+
+      @media (max-width: 768px) {
+        order: 4;
+        width: 130px;
+        margin: 10px 0;
+
+        .button {
+          width: 40px;
+          height: 40px;
+
+          svg {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        b {
+          font-size: 26px;
+        }
+      }
+
       &-minus {
         svg {
           path:first-of-type {
             display: none;
           }
         }
-      }
-
-      b {
-        font-size: 22px;
       }
     }
 
@@ -204,6 +272,16 @@ body {
         font-size: 22px;
         letter-spacing: 0.01em;
       }
+      @media (max-width: 768px) {
+        order: 3;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 10px 0;
+
+        b {
+          font-size: 26px;
+        }
+      }
     }
 
     &-remove {
@@ -211,6 +289,17 @@ body {
       align-items: center;
       justify-content: flex-end;
       width: 4%;
+
+      @media (max-width: 768px) {
+        position: absolute;
+        right: 0;
+        width: auto;
+
+        button {
+          width: 40px;
+          height: 40px;
+        }
+      }
 
       .button {
         border-color: darken($color: $gray-line, $amount: 10);
@@ -300,12 +389,21 @@ body {
         width: 210px;
         padding: 16px;
       }
+      @media (max-width: 500px) {
+        flex-direction: column;
+
+        .button {
+          margin-bottom: 20px;
+          width: 100%;
+          height: 54px;
+        }
+      }
     }
   }
 
   &--empty {
     margin: 0 auto;
-    width: 560px;
+    max-width: 560px;
     text-align: center;
 
     h2 {
@@ -327,7 +425,7 @@ body {
 
     img {
       display: block;
-      width: 300px;
+      max-width: 300px;
       margin: 45px auto 60px;
     }
 

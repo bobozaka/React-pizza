@@ -1,0 +1,27 @@
+.full-pizza {
+  &__content {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__image {
+    max-width: 100%;
+  }
+  &__text{
+    h2{
+      margin-bottom: 10px;
+    }
+    h4{
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__text {
+      h2{
+      font-size: 22px;
+    }
+    }
+  }
+}

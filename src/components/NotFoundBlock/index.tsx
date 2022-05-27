@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './NotFound.module.scss';
 
-const NotFounBlock = () => {
+export const NotFounBlock: React.FC= () => {
   return (
     <div className={styles.root}>
       <h1>
-        <span>:-( </span>
+        <span>😕 </span>
         <br />
         Ничего не найдено
       </h1>
@@ -14,4 +14,4 @@ const NotFounBlock = () => {
   );
 };
 
-export default NotFounBlock;
+
